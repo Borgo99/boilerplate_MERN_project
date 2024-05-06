@@ -55,9 +55,12 @@ export default (
     // UNEXPECTED ERROR
     default: // handle unknown errors
       if (!(err as AppError).statusCode)
-        return console.log(
-          `\nUnhandled error ${err.name}\n${err.stack || err}\n`
-        );
+        console.log(`\nUnhandled error ${err.name}\n${err.stack || err}\n`);
+      // return sendError(
+      //   res,
+      //   //@ts-ignore
+      //   new ErrorResponse((err as AppError).msg, err.statusCode)
+      // );
       break;
   }
 

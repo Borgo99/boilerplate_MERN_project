@@ -30,7 +30,12 @@ exports.default = (function (err, req, res, next) {
         // UNEXPECTED ERROR
         default: // handle unknown errors
             if (!err.statusCode)
-                return console.log("\nUnhandled error ".concat(err.name, "\n").concat(err.stack || err, "\n"));
+                console.log("\nUnhandled error ".concat(err.name, "\n").concat(err.stack || err, "\n"));
+            // return sendError(
+            //   res,
+            //   //@ts-ignore
+            //   new ErrorResponse((err as AppError).msg, err.statusCode)
+            // );
             break;
     }
     // if err arrives here it means is our AppError

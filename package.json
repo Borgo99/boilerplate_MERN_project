@@ -3,33 +3,31 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "ts-node --project tsconfig.json server/server.ts",
+    "dev": "ts-node --project tsconfig.json server.ts",
     "start:next": "next start",
     "build:server": "tsc --project tsconfig.json",
     "build:next": "next build",
-
     "install:mongo": "npm i mongoose @typegoose/typegoose",
     "install:auth": "npm i jsonwebtoken bcryptjs cookie-parser nookies",
-
-    "dev:server": "nodemon --watch './**/*.ts' --exec 'ts-node' server/server.ts",
+    "dev:server": "nodemon --watch './**/*.ts' --exec 'ts-node' server.ts",
     "build": "npm run build:server && npm run build:next",
-    "start": "NODE_ENV=production node dist/server/server.js"
+    "start": "NODE_ENV=production node dist/server.js"
   },
   "dependencies": {
-    "@types/node": "20.11.0",
-    "@types/react": "18.2.47",
-    "@types/react-dom": "18.2.18",
-    "axios": "^1.6.5",
+    "@types/node": "20.12.8",
+    "@types/react": "18.3.1",
+    "@types/react-dom": "18.3.0",
+    "axios": "^1.6.8",
     "cookie-parser": "^1.4.6",
-    "dotenv": "^16.3.1",
-    "express": "^4.18.2",
-    "next": "14.0.4",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "typescript": "5.3.3"
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "next": "14.2.3",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "typescript": "5.4.5"
   },
   "devDependencies": {
-    "sass": "^1.69.7",
+    "sass": "^1.76.0",
     "ts-node": "^10.9.2"
   }
 }

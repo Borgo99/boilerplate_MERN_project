@@ -1,8 +1,12 @@
+import dotenv from "dotenv";
+if (process.env.NODE_ENV !== "production") {
+  dotenv.config({ path: `./config.env` });
+}
+
 import express, { Request, Response } from "express";
 import next from "next";
-import errorMiddleware from "./middlewares/errorMiddleware";
-import { router } from "./router";
-require("dotenv").config({ path: `${__dirname}/../config.env` });
+import errorMiddleware from "./server/middlewares/errorMiddleware";
+import { router } from "./server/router";
 
 const dev = process.env.NODE_ENV !== "production";
 const app = next({ dev });
